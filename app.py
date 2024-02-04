@@ -10,7 +10,7 @@ with open('weather.pkl', 'rb') as model_file:
     weather = pickle.load(model_file)
 
 # Your machine learning model function
-def predict(input_data,weather_data):
+def predict(input_data):
     res = model.predict(input_data)
     print("\n------Output-----\n")
     return res[0]
