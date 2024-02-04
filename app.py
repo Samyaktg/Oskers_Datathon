@@ -16,21 +16,8 @@ def predict(input_data):
     return res[0]
 
 def weather_preds (weather_data):    
-    encod=weather_data[0]
+    #
     
-    if encod == 'clear':
-        weather_data[0]=[0]
-    elif encod == 'cloudy':
-        weather_data[0]=[1]
-    elif encod == 'foggy':
-        weather_data[0]=[2]
-    elif encod == 'rainy':
-        weather_data[0]=[3]
-    elif encod == 'semi cloudy':
-        weather_data[0]=[4]
-    elif encod == 'storm':
-        weather_data[0]=[5]
-
     sam = weather.predict(weather_data)
     return sam
     
@@ -51,6 +38,21 @@ sky=['clear', 'cloudy', 'foggy','rainy','semi cloudy','storm']
 weather = st.selectbox('Select an option:', sky)
 voltage = np.mean([Va,Vb,Vc],axis=0)
 trip_hour= st.slider('Select a time:', min_value=1, max_value=24, value=12)
+
+
+if weather == 'clear':
+    weather=[0]
+elif weather == 'cloudy':
+    weather=[1]
+elif weather == 'foggy':
+    weather=[2]
+elif weather == 'rainy':
+    weather=[3]
+elif weather == 'semi cloudy':
+    weather=[4]
+elif weather == 'storm':
+    weather=[5]
+
 # Input for user
 user_input = np.array([[float(Ia), float(Ib), float(Ic), float(Va), float(Vb), float(Vc)]])
 
