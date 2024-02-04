@@ -27,7 +27,7 @@ Va = st.number_input("Line Voltage of Phase A:", step=0.1)
 Vb = st.number_input("Line Voltage of Phase B:", step=0.1)
 Vc = st.number_input("Line Voltage of Phase C:", step=0.1)
 sky=['clear', 'cloudy', 'foggy','rainy','semi cloudy','storm']
-weather = st.selectbox('Select an option:', sky)
+weather = st.selectbox('How is the weather?', sky)
 
 
 
