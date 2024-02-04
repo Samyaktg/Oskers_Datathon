@@ -18,7 +18,7 @@ def predict(input_data):
 def weather_preds (weather_data):    
       
     sam = weat_her.predict(weather_data)
-    return sam
+    return sam[1]
     
     
      
