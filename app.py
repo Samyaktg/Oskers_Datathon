@@ -18,7 +18,7 @@ def predict(input_data):
 def weather_preds (weather_data):    
       
     sam = weat_her.predict(weather_data)
-    return sam[1]
+    return sam
     
     
      
@@ -78,7 +78,7 @@ if st.button("Predict"):
         st.write("Fault location uncertain")
 
     st.write("Possible Issues:")
-    print(weather_pred)
+    print("weather:",weather_pred)
     if weather_pred[0] == 0:
         st.write("bad weather")
     elif weather_pred[0] == 1:
