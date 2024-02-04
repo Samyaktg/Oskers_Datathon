@@ -72,10 +72,11 @@ if st.button("Predict"):
         st.write("Line A to Ground Fault")
     elif prediction[0] == 4:
         st.write("Line B to Line C Fault") 
-    elif prediction[0] == 5 and weather_pred[0] == 0:
+    elif prediction[0] == 5 :
         st.write("NO Fault")   
     else:
         st.write("Fault location uncertain")
+        
     st.write("Possible Issues:")
     if weather_pred[1] == 0:
         st.write("bad weather")
