@@ -56,7 +56,7 @@ elif weather == 'storm':
 # Input for user
 user_input = np.array([[float(Ia), float(Ib), float(Ic), float(Va), float(Vb), float(Vc)]])
 
-weather_data = np.array([[weather,float(voltage),float(trip_hour)]])
+weather_data = np.array([[float(weather),float(voltage),float(trip_hour)]])
 # Button to make predictions
 if st.button("Predict"):
     # Call the predict function with user input
