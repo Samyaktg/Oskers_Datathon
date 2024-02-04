@@ -76,25 +76,26 @@ if st.button("Predict"):
         st.write("NO Fault")   
     else:
         st.write("Fault location uncertain")
-        
+
     st.write("Possible Issues:")
-    if weather_pred[1] == 0:
+    print(weather_pred)
+    if weather_pred[0] == 0:
         st.write("bad weather")
-    elif weather_pred[1] == 1:
+    elif weather_pred[0] == 1:
         st.write("breaker opened")
-    elif weather_pred[1] == 2:
+    elif weather_pred[0] == 2:
         st.write("earthing")
-    elif weather_pred[1] == 3:
+    elif weather_pred[0] == 3:
         st.write("foreign element")
-    elif weather_pred[1] == 4:
+    elif weather_pred[0] == 4:
         st.write("fuse failure") 
-    elif weather_pred[1] == 5:
+    elif weather_pred[0] == 5:
         st.write("relay burn")  
-    elif weather_pred[1] == 6:
+    elif weather_pred[0] == 6:
         st.write("transient fault")  
-    elif weather_pred[1] == 7:
+    elif weather_pred[0] == 7:
         st.write("trip from kite")  
-    elif weather_pred[1] == 8:
+    elif weather_pred[0] == 8:
         st.write("wire fallen")   
     else:
         st.write("Uncertain")
