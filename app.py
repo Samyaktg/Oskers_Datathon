@@ -41,17 +41,17 @@ trip_hour= st.slider('Select a time:', min_value=1, max_value=24, value=12)
 
 
 if weather == 'clear':
-    weather=[0]
+    weather=0
 elif weather == 'cloudy':
-    weather=[1]
+    weather=1
 elif weather == 'foggy':
-    weather=[2]
+    weather=2
 elif weather == 'rainy':
-    weather=[3]
+    weather=3
 elif weather == 'semi cloudy':
-    weather=[4]
+    weather=4
 elif weather == 'storm':
-    weather=[5]
+    weather=5
 
 # Input for user
 user_input = np.array([[float(Ia), float(Ib), float(Ic), float(Va), float(Vb), float(Vc)]])
