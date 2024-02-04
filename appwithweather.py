@@ -79,23 +79,23 @@ if st.button("Predict"):
 
     st.write("Possible Issues:")
     print("weather:",weather_pred)
-    if weather_pred == 0:
+    if weather_pred[0] == 0:
         st.write("bad weather")
-    elif weather_pred == 1:
+    elif weather_pred[0] == 1:
         st.write("breaker opened")
-    elif weather_pred == 2:
+    elif weather_pred[0] == 2:
         st.write("earthing")
     elif weather_pred[0] == 3:
         st.write("foreign element")
-    elif weather_pred == 4:
+    elif weather_pred[0] == 4:
         st.write("fuse failure") 
-    elif weather_pred == 5:
+    elif weather_pred[0] == 5:
         st.write("relay burn")  
-    elif weather_pred == 6:
+    elif weather_pred[0] == 6:
         st.write("transient fault")  
-    elif weather_pred == 7:
+    elif weather_pred[0] == 7:
         st.write("trip from kite")  
-    elif weather_pred == 8:
+    elif weather_pred[0] == 8:
         st.write("wire fallen")   
     else:
         st.write("Uncertain")
