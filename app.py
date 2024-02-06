@@ -67,27 +67,25 @@ if st.button("Predict"):
 
 
     st.write("Prediction:")
-    if prediction[0] == 0:
-        st.write("Line A Line B Line C")
-    elif prediction[0] == 1:
-        st.write("Line A Line B Line C to Ground Fault")
-    elif prediction[0] == 2:
-        st.write("Line A Line B to Ground Fault")
-    elif prediction[0] == 3:
-        st.write("Line A to Ground Fault")
-    elif prediction[0] == 4:
-        st.write("Line B to Line C Fault") 
-    elif prediction[0] == 5 :
-        st.write("NO Fault")   
+    if trip_pred[0] != 0:
+        
+        if prediction[0] == 0:
+            st.write("Line A Line B Line C")
+        elif prediction[0] == 1:
+            st.write("Line A Line B Line C to Ground Fault")
+        elif prediction[0] == 2:
+            st.write("Line A Line B to Ground Fault")
+        elif prediction[0] == 3:
+            st.write("Line A to Ground Fault")
+        elif prediction[0] == 4:
+            st.write("Line B to Line C Fault") 
+        elif prediction[0] == 5 :
+            st.write("NO Fault")   
     else:
-        st.write("Fault location uncertain")
+        st.write("No trips detected")
 
     st.write("Possible Issues:")
     
-    if trip_pred[0] == 0:
-        st.write("no trip")
-    else:
-        st.write("trip")
 
     reason_input= np.array([[float(weather),float(voltage),float(trip_hour),float(trip_pred)]])
     rreason_for_trip=reason_trip(reason_input)
