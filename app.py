@@ -28,7 +28,7 @@ def reason_trip (reason_pred):
      
 
 # Streamlit app
-st.title("Your ML Model Web App")
+st.title("Electrical Fault Analysis Model")
 
 
 Ia = st.number_input("Line Current of Phase A:", step=0.1)
