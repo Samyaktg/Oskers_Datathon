@@ -31,40 +31,42 @@ From the get-go my focus was to make an effective model as such I had the choice
 
 Regressor confusion matrix (Image_URL_3) Classifier confusion matrix (Image_URL_4)
 
-## Conclusion
+### Conclusion
 Classifier models are providing the best results as our data is in discrete form!
 
 ## Exploratory Data analysis
-- The generator (![generator](Image_URL_5))
-- Voltage graph (![Voltage graph](Image_URL_6))
-- Current graph (![Current graph](Image_URL_7))
+### Overall analysis
+- Voltage graph (![Voltage graph](https://github.com/Samyaktg/Oskers_Datathon/blob/main/res/voltage.png))
+- Current graph (![Current graph](https://github.com/Samyaktg/Oskers_Datathon/blob/main/res/current.png))
 - Voltage and Current graph, where there is a large fluctuation in the graph, there faults have occurred
 
 ### No Fault
-- Voltage graph (![No Fault Voltage graph](Image_URL_8))
-- Current graph (![No Fault Current graph](Image_URL_9))
+- Voltage graph (![No Fault Voltage graph](https://github.com/Samyaktg/Oskers_Datathon/blob/main/res/no%20fault%20voltage.png))
+- Current graph (![No Fault Current graph](https://github.com/Samyaktg/Oskers_Datathon/blob/main/res/no%20fault%20current.png))
 - In a normal (No_Fault) condition Voltage and Current graph is symmetrical and sinusoidal in nature with current and voltage 120 degrees in phase shift and maximum current is approximately +100 to -100 Amperes and voltage +0.5 pu to -0.5pu
 
 ### Faulty System with Line A to Ground Fault
-- Voltage graph (![Line A to Ground Fault Voltage graph](Image_URL_10))
-- Current graph (![Line A to Ground Fault Current graph](Image_URL_11))
+- Voltage graph (![Line A to Ground Fault Voltage graph](https://github.com/Samyaktg/Oskers_Datathon/blob/main/res/Faulty%20System%20with%20Line%20A%20to%20Ground%20Fault%20voltage.png))
+- Current graph (![Line A to Ground Fault Current graph](https://github.com/Samyaktg/Oskers_Datathon/blob/main/res/Faulty%20System%20with%20Line%20A%20to%20Ground%20Fault%20current.png))
 - At a time of Line A to ground fault, the current in line A increases to 10 fold approximately 1000 Ampears from normal 100 Ampears and voltage reduced.
 
 ### Faulty System with Line A, Line B to Ground Fault
-- Voltage graph (![Line A, Line B to Ground Fault Voltage graph](Image_URL_12))
-- Current graph (![Line A, Line B to Ground Fault Current graph](Image_URL_13))
+- Voltage graph (![Line A, Line B to Ground Fault Voltage graph](https://github.com/Samyaktg/Oskers_Datathon/blob/main/res/Faulty%20System%20with%20Line%20A%20%2CLine%20B%20to%20Ground%20Fault%20voltage.png))
+- Current graph (![Line A, Line B to Ground Fault Current graph](https://github.com/Samyaktg/Oskers_Datathon/blob/main/res/Faulty%20System%20with%20Line%20A%20%2CLine%20B%20to%20Ground%20Fault%20current.png))
 
 ### Faulty System with Line B to Line C
-- Voltage graph (![Line B to Line C Fault Voltage graph](Image_URL_14))
-- Current graph (![Line B to Line C Fault Current graph](Image_URL_15))
+- Voltage graph (![Line B to Line C Fault Voltage graph](https://github.com/Samyaktg/Oskers_Datathon/blob/main/res/Faulty%20System%20with%20Line%20B%20to%20Line%20C%20voltage.png))
+- Current graph (![Line B to Line C Fault Current graph](https://github.com/Samyaktg/Oskers_Datathon/blob/main/res/Faulty%20System%20with%20Line%20B%20to%20Line%20C%20current.png))
 
-### Faulty System with Line A - Line B - Line C
-- Voltage graph (![Line A - Line B - Line C Fault Voltage graph](Image_URL_16))
-- Current graph (![Line A - Line B - Line C Fault Current graph](Image_URL_17))
-
+### Faulty System with Line A - Line B - Line C 
+- Voltage graph (![Line A - Line B - Line C - Ground Fault Voltage graph](https://github.com/Samyaktg/Oskers_Datathon/blob/main/res/Faulty%20System%20with%20Line%20A%20to%20Ground%20Fault%20voltage.png))
+- Current graph (![Line A - Line B - Line C - Ground Fault Current graph](https://github.com/Samyaktg/Oskers_Datathon/blob/main/res/Faulty%20System%20with%20Line%20A%20to%20Ground%20Fault%20current.png))
+  
 ### Faulty System with Line A - Line B - Line C - Ground
-- Voltage graph (![Line A - Line B - Line C - Ground Fault Voltage graph](Image_URL_18))
-- Current graph (![Line A - Line B - Line C - Ground Fault Current graph](Image_URL_19))
+- Voltage graph (![Line A - Line B - Line C - Ground Fault Voltage graph](https://github.com/Samyaktg/Oskers_Datathon/blob/main/res/Faulty%20System%20with%20Line%20A%20-%20Line%20B%20-%20Line%20C%20-%20Ground%20voltage.png))
+- Current graph (![Line A - Line B - Line C - Ground Fault Current graph](https://github.com/Samyaktg/Oskers_Datathon/blob/main/res/Faulty%20System%20with%20Line%20A%20-%20Line%20B%20-%20Line%20C%20-%20Ground%20current.png))
+
+
 
 ## Model decision
 I decided to use XGBoost Classifier since it requires minimal parameter tuning and gives accurate results quickly. However, to predict the type of fault, I had to predict a fault in each line. To achieve this, I had to create an ensemble, i.e., we are taking 6 inputs, and the model is predicting 4 outputs and calculating the type of fault based on it. So I utilized the Multiclass-multioutput classification (also known as multitask classification), which is a classification task that labels each sample with a set of non-binary properties. Both the number of properties and the number of classes per property are greater than 2. A single estimator thus handles several joint classification tasks. This is both a generalization of the multilabel classification task, which only considers binary attributes, as well as a generalization of the multiclass classification task, where only one property is considered.
