@@ -1,4 +1,4 @@
-# Oskers_Datathon
+# Electrical Fault Analysis Model
 
 ## Problem Statement
 The electrical distribution network comprising underground and overhead lines is a critical component of the power system infrastructure. However, it is susceptible to various faults due to equipment failure, environmental conditions, human errors, etc.
