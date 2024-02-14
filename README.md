@@ -96,3 +96,10 @@ reason.pkl - ML model to predict reasoning behind the fault (takes weather input
 requirement.txt - libraries required for running this software
 
 trip.pkl - General prediction of weather its a trip or not
+
+# Special thanks to
+Dhruv Kapur 
+
+Khush Trivedi
+
+for their help in this project
