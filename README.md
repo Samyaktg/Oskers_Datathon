@@ -97,7 +97,7 @@ requirement.txt - libraries required for running this software
 
 trip.pkl - General prediction of weather its a trip or not
 
-# Special thanks to
+# Special Thanks to
 Dhruv Kapur 
 
 Khush Trivedi
